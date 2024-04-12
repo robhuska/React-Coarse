@@ -17,13 +17,12 @@ Thumbs.db
 .vscode/
 .nvmrc
 package-lock.json
+node_modules/
+**/.gitignore
 
 # ignore log files and databases
 *.log
 *.sqlite
-
-# ignore production files
-node_modules/
 
 # ignore compiled files
 *.com
