@@ -21,16 +21,6 @@ export default function Modal({
   return createPortal(
     <dialog ref={dialog} className="modal" onClose={onClose}>
       {children}
-      <form method="dialog" className="modal-actions">
-        <button type="button" onClick={onClose} className="text-button">
-          Close
-        </button>
-        {submitText && (
-          <button type="button" onClick={onSubmit} className="button">
-            {submitText}
-          </button>
-        )}
-      </form>
     </dialog>,
     document.getElementById('modal')
   );

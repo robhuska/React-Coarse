@@ -4,6 +4,7 @@ export const CartContext = createContext({
   items: [],
   addItemToCart: () => {},
   updateItemQuantity: () => {},
+  clearCart: () => {},
   cartTotal: 0.0,
 });
 
@@ -38,7 +39,7 @@ function shoppingCartReducer(state, action) {
     return {
       ...state,
       items: updatedCartItems,
-      total: `$${total.toFixed(2)}`,
+      total,
     };
   }
 
@@ -68,9 +69,21 @@ function shoppingCartReducer(state, action) {
     return {
       ...state,
       items: updatedCartItems,
-      total: `$${total.toFixed(2)}`,
+      total,
     };
   }
+
+  if (action.type === 'CLEAR_CART') {
+    return {
+      ...state,
+      items: [],
+      total: 0,
+    };
+  }
+
+  return {
+    ...state,
+  };
 }
 
 export function CartContextProvider({ children }) {
@@ -96,11 +109,18 @@ export function CartContextProvider({ children }) {
     });
   }
 
+  function handleClearCart() {
+    cartDispatch({
+      type: 'CLEAR_CART',
+    });
+  }
+
   const ctxValue = {
     items: cartState.items,
+    total: cartState.total,
     addItemToCart: handleAddItemToCart,
     updateItemQuantity: handleUpdateCartItemQuantity,
-    total: cartState.total,
+    clearCart: handleClearCart,
   };
 
   return (
