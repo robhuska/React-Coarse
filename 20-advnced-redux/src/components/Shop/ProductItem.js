@@ -1,8 +1,15 @@
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../stroe/cart';
 import Card from '../UI/Card';
 import classes from './ProductItem.module.css';
 
 const ProductItem = (props) => {
-  const { title, price, description } = props;
+  const dispatch = useDispatch();
+  const { title, price, description, id } = props;
+
+  function handleAddToCart(item) {
+    dispatch(cartActions.ADD_ITEM_TO_CART(item));
+  }
 
   return (
     <li className={classes.item}>
@@ -13,7 +20,19 @@ const ProductItem = (props) => {
         </header>
         <p>{description}</p>
         <div className={classes.actions}>
-          <button>Add to Cart</button>
+          <button
+            onClick={() =>
+              handleAddToCart({
+                id,
+                title,
+                description,
+                price,
+                quantity: 1,
+              })
+            }
+          >
+            Add to Cart
+          </button>
         </div>
       </Card>
     </li>
