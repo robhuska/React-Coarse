@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"asdfa sdf!!!","image":"https://t4.ftcdn.net/jpg/05/83/87/67/360_F_583876738_eC5lsIKAvQ6tR2HhkXcGk3hCPL2gLPhv.jpg","date":"2024-04-10","description":"asdf asdf","id":"eac307d4-abf7-4062-976b-a614a4d3bc71"},{"title":"asdf a asaaaa","image":"https://t4.ftcdn.net/jpg/05/83/87/67/360_F_583876738_eC5lsIKAvQ6tR2HhkXcGk3hCPL2gLPhv.jpg","date":"2024-04-04","description":"asdf asfd fdsaa dfs","id":"dc57e337-7fdc-466d-ab60-f8600c61827a"},{"title":"asdf","image":"https://t4.ftcdn.net/jpg/05/83/87/67/360_F_583876738_eC5lsIKAvQ6tR2HhkXcGk3hCPL2gLPhv.jpg","date":"2024-04-12","description":"asdf","id":"aa78386d-e638-4798-b7ab-dc7126501683"},{"title":"aasdf","image":"https://t4.ftcdn.net/jpg/05/83/87/67/360_F_583876738_eC5lsIKAvQ6tR2HhkXcGk3hCPL2gLPhv.jpg","date":"2024-04-11","description":"asdf asd","id":"53df4269-ce21-4016-8d42-920ce70e7464"},{"title":"Another New","image":"https://t4.ftcdn.net/jpg/05/83/87/67/360_F_583876738_eC5lsIKAvQ6tR2HhkXcGk3hCPL2gLPhv.jpg","date":"2024-05-05","description":"asdf asdfasd fasd","id":"3a7c745c-fecc-4d37-936e-10e22bccf9de"},{"title":"A new event","image":"https://www.adorama.com/alc/wp-content/uploads/2015/05/stories-HRX5WXFyB64-unsplash.jpg","date":"2024-04-23","description":"New event added!","id":"7c9d4bcb-eaad-405f-b333-0759802a40d3"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}

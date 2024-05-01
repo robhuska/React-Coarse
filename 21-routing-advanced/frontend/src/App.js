@@ -1,12 +1,3 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import RootLayout from './layouts/Root';
-import HomePage from './pages/Home';
-import EventsPage from './pages/Events';
-import NewEventPage from './pages/NewEvent';
-import EditEventPage from './pages/EditEvent';
-import EventDetailsPage from './pages/EventDetails';
-import EventsRootLayout from './layouts/EventsRoot';
-
 // Challenge / Exercise
 
 // 1. Add five new (dummy) page components (content can be simple <h1> elements)
@@ -29,10 +20,26 @@ import EventsRootLayout from './layouts/EventsRoot';
 // 7. Output the ID of the selected event on the EventDetailPage
 // BONUS: Add another (nested) layout route that adds the <EventNavigation> component above all /events... page components
 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import RootLayout from './layouts/Root';
+import HomePage from './pages/Home';
+import EventsPage, { loader as eventsLoader } from './pages/Events';
+import NewEventPage from './pages/NewEvent';
+import EditEventPage from './pages/EditEvent';
+import EventDetailsPage, {
+  loader as eventDetailLoader,
+  action as deleteEventAction,
+} from './pages/EventDetails';
+import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
+import { action as addOrUpdateEventAction } from './components/EventForm';
+import EventsRootLayout from './layouts/EventsRoot';
+import ErrorLayout from './layouts/Error';
+
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
+    errorElement: <ErrorLayout />,
     children: [
       {
         index: true,
@@ -45,20 +52,36 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <EventsPage />,
+            loader: eventsLoader,
           },
           {
             path: 'new',
             element: <NewEventPage />,
+            action: addOrUpdateEventAction,
           },
           {
             path: ':eventId',
-            element: <EventDetailsPage />,
-          },
-          {
-            path: ':eventID/edit',
-            element: <EditEventPage />,
+            loader: eventDetailLoader,
+            id: 'event-detail',
+            children: [
+              {
+                index: true,
+                element: <EventDetailsPage />,
+                action: deleteEventAction,
+              },
+              {
+                path: 'edit',
+                element: <EditEventPage />,
+                action: addOrUpdateEventAction,
+              },
+            ],
           },
         ],
+      },
+      {
+        path: 'newsletter',
+        element: <NewsletterPage />,
+        action: newsletterAction,
       },
     ],
   },
