@@ -1,12 +1,1 @@
-{
-  "events": [
-    {
-      "title": "A new event",
-      "image": "https://cdn.muenchen-p.de/fl_progressive,q_65/.imaging/stk/responsive/teaser300/dms/va-2016/muenchner-christkindlmarkt/christkindlmarkt-marienplat-logo-hp/document/christkindlmarkt-marienplat-logo-hp.jpg",
-      "date": "2022-10-01",
-      "description": "Some awesome event!",
-      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
-    }
-  ],
-  "users": []
-}
+{"events":[{"title":"test","image":"https://t4.ftcdn.net/jpg/05/83/87/67/360_F_583876738_eC5lsIKAvQ6tR2HhkXcGk3hCPL2gLPhv.jpg","date":"2024-04-12","description":"asdf","id":"aa78386d-e638-4798-b7ab-dc7126501683"},{"title":"aasdf","image":"https://t4.ftcdn.net/jpg/05/83/87/67/360_F_583876738_eC5lsIKAvQ6tR2HhkXcGk3hCPL2gLPhv.jpg","date":"2024-04-11","description":"asdf asd","id":"53df4269-ce21-4016-8d42-920ce70e7464"},{"title":"Another New","image":"https://t4.ftcdn.net/jpg/05/83/87/67/360_F_583876738_eC5lsIKAvQ6tR2HhkXcGk3hCPL2gLPhv.jpg","date":"2024-05-05","description":"asdf asdfasd fasd","id":"3a7c745c-fecc-4d37-936e-10e22bccf9de"},{"title":"A new event","image":"https://www.adorama.com/alc/wp-content/uploads/2015/05/stories-HRX5WXFyB64-unsplash.jpg","date":"2024-04-23","description":"New event added!","id":"7c9d4bcb-eaad-405f-b333-0759802a40d3"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}],"users":[{"email":"test@test.com","password":"$2a$12$h1GtYLSaE7C4OZI0tfC6Necix94FF5mYxHdG6zSpxwhbKBlFWa0Ru","id":"87cbf40f-ac1b-49e7-9cc8-075cff4bf4fd"}]}
