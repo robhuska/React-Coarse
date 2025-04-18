@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { MongoClient, ObjectId } from 'mongodb';
 import MeetupDetails from '@/components/meetups/MeetupDetails';
 import { MONGODB_URI } from '@/config';
+import { notFound } from 'next/navigation';
 
 function MeetupDetailPage(props) {
   return (
@@ -32,7 +33,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false,
+    fallback: 'blocking',
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
@@ -43,12 +44,25 @@ export async function getStaticProps(context) {
   // fetch data for single meetup
   const meetupId = context.params.meetupId;
 
+  if(!ObjectId.isValid(meetupId)) {
+    return {
+      notFound: true,
+    }
+  }
+  
+
   const client = await MongoClient.connect(MONGODB_URI);
   const db = client.db();
   const meetupsCollection = db.collection('meetups');
   const selectedMeetup = await meetupsCollection.findOne({
     _id: new ObjectId(meetupId),
   });
+
+  if(!selectedMeetup) {
+    return {
+      notFound: true,
+    }
+  }
 
   client.close();
 
